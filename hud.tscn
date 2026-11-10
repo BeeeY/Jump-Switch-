@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b0wylysp2emx5"]
+
+[ext_resource type="Script" uid="uid://de1eo0q7vl18a" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Theme" uid="uid://26cr5x5m37gb" path="res://new_theme.tres" id="2_64ctp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2snw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.8920336, 0.89203364, 0.8920335, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="hud" type="CanvasLayer" unique_id=810032543]
+script = ExtResource("1_37p78")
+
+[node name="Border" type="Panel" parent="." unique_id=1259054981]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
+
+[node name="Title" type="Label" parent="." unique_id=1210574253]
+offset_left = 208.0
+offset_top = 113.0
+offset_right = 572.0
+offset_bottom = 328.0
+theme = ExtResource("2_64ctp")
+theme_override_colors/font_color = Color(0.99878925, 0.58783215, 0.5597773, 1)
+text = "Jump"
+
+[node name="Title2" type="Label" parent="." unique_id=1544943132]
+offset_left = 428.0
+offset_top = 253.0
+offset_right = 899.0
+offset_bottom = 468.0
+theme = ExtResource("2_64ctp")
+theme_override_colors/font_color = Color(0.3080571, 0.73726946, 0.6716846, 1)
+text = "Switch!"
+
+[node name="Level" type="Label" parent="." unique_id=1643740779]
+offset_left = 430.0
+offset_top = 18.0
+offset_right = 650.0
+offset_bottom = 126.0
+theme = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 75
+text = "Level 1"
+
+[node name="Start" type="Button" parent="." unique_id=63127950]
+offset_left = 476.0
+offset_top = 452.0
+offset_right = 672.0
+offset_bottom = 568.0
+theme = ExtResource("2_64ctp")
+text = "Start"

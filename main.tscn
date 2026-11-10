@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ce6jx0r3rb558"]
+
+[ext_resource type="PackedScene" uid="uid://b0wylysp2emx5" path="res://hud.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dhyhgm4dxee2p" path="res://p_1.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://066a1gj8tk3g" path="res://p_2.tscn" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://v32olqy4y7i1" path="res://icon.svg" id="3_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
+size = Vector2(500, 20)
+
+[node name="Main" type="Node2D" unique_id=1339862464]
+
+[node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
+
+[node name="P1" parent="." unique_id=797948295 instance=ExtResource("1_h2yge")]
+position = Vector2(86, 526)
+
+[node name="P2" parent="." unique_id=1594469872 instance=ExtResource("2_1bvp3")]
+position = Vector2(418, 543)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1761590388]
+position = Vector2(256, 621)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1408340082]
+shape = SubResource("RectangleShape2D_glgfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1540060670]
+scale = Vector2(3.8, 0.1)
+texture = ExtResource("3_lquwl")
+
+[connection signal="jumped" from="P1" to="hud" method="_on_p_1_jumped"]
+[connection signal="jumped" from="P1" to="P2" method="_on_p_1_jumped"]
+[connection signal="jumped" from="P2" to="hud" method="_on_p_2_jumped"]
+[connection signal="jumped" from="P2" to="P1" method="_on_p_2_jumped"]
