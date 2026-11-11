@@ -2,13 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://b0wylysp2emx5" path="res://hud.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dhyhgm4dxee2p" path="res://p_1.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://ctmq1ktmq0ubx" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://066a1gj8tk3g" path="res://p_2.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://v32olqy4y7i1" path="res://icon.svg" id="3_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
 size = Vector2(500, 20)
 
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+
 [node name="Main" type="Node2D" unique_id=1339862464]
+script = ExtResource("1_lquwl")
 
 [node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
 
@@ -29,6 +33,12 @@ shape = SubResource("RectangleShape2D_glgfw")
 scale = Vector2(3.8, 0.1)
 texture = ExtResource("3_lquwl")
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=77481038]
+
+[node name="Level1" type="TileMapLayer" parent="." unique_id=1143906434]
+tile_set = SubResource("TileSet_lquwl")
+
+[connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]
 [connection signal="jumped" from="P1" to="hud" method="_on_p_1_jumped"]
 [connection signal="jumped" from="P1" to="P2" method="_on_p_1_jumped"]
 [connection signal="jumped" from="P2" to="hud" method="_on_p_2_jumped"]

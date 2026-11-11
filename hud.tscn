@@ -23,6 +23,10 @@ corner_detail = 5
 [node name="hud" type="CanvasLayer" unique_id=810032543]
 script = ExtResource("1_37p78")
 
+[node name="Background" type="ColorRect" parent="." unique_id=2135365153]
+offset_right = 1152.0
+offset_bottom = 648.0
+
 [node name="Border" type="Panel" parent="." unique_id=1259054981]
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -63,3 +67,23 @@ offset_right = 672.0
 offset_bottom = 568.0
 theme = ExtResource("2_64ctp")
 text = "Start"
+
+[node name="1PMode" type="Button" parent="." unique_id=167326186]
+offset_left = 429.0
+offset_top = 226.0
+offset_right = 699.0
+offset_bottom = 342.0
+theme = ExtResource("2_64ctp")
+text = "1 Player"
+
+[node name="2PMode" type="Button" parent="." unique_id=483737157]
+offset_left = 400.0
+offset_top = 362.0
+offset_right = 730.0
+offset_bottom = 478.0
+theme = ExtResource("2_64ctp")
+text = "2 Players"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="1PMode" to="." method="_on_1p_mode_pressed"]
+[connection signal="pressed" from="2PMode" to="." method="_on_2p_mode_pressed"]

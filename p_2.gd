@@ -47,3 +47,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_p_1_jumped() -> void:
 	jump_turn = true
+
+func spawn(pos):
+	position = pos
