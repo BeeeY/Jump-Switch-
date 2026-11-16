@@ -1,20 +1,29 @@
-[gd_scene format=3 uid="uid://ce6jx0r3rb558"]
+[gd_scene format=4 uid="uid://ce6jx0r3rb558"]
 
 [ext_resource type="PackedScene" uid="uid://b0wylysp2emx5" path="res://hud.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dhyhgm4dxee2p" path="res://p_1.tscn" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://ctmq1ktmq0ubx" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://066a1gj8tk3g" path="res://p_2.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://v32olqy4y7i1" path="res://icon.svg" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dppm2xh06dmwb" path="res://assets/Jump Switch Sprites3.png" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
 size = Vector2(500, 20)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("6_7mycd")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_lquwl"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_272bh")
 
 [node name="Main" type="Node2D" unique_id=1339862464]
 script = ExtResource("1_lquwl")
 
 [node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
+visible = false
 
 [node name="P1" parent="." unique_id=797948295 instance=ExtResource("1_h2yge")]
 position = Vector2(86, 526)
@@ -36,6 +45,7 @@ texture = ExtResource("3_lquwl")
 [node name="Marker2D" type="Marker2D" parent="." unique_id=77481038]
 
 [node name="Level1" type="TileMapLayer" parent="." unique_id=1143906434]
+tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]

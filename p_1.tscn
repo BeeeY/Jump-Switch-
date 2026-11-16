@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dhyhgm4dxee2p"]
 
 [ext_resource type="Script" uid="uid://dx2w0guhgvwoa" path="res://p_1.gd" id="1_jjlup"]
-[ext_resource type="Texture2D" uid="uid://v32olqy4y7i1" path="res://icon.svg" id="2_hvadw"]
+[ext_resource type="Texture2D" uid="uid://q0fsqeu2vke5" path="res://assets/Jump Switch Sprites1.png" id="2_jjlup"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glgfw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hvadw")
+"texture": ExtResource("2_jjlup")
 }],
 "loop": 1,
 "name": &"default",
@@ -15,13 +15,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5af"]
-size = Vector2(120, 120)
+size = Vector2(80, 80)
 
 [node name="P1" type="CharacterBody2D" unique_id=797948295]
 script = ExtResource("1_jjlup")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1465693378]
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_glgfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525889128]
