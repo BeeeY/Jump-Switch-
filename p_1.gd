@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 signal jumped
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const SPEED = 150
+const JUMP_VELOCITY = -300
 
 var jump_turn = null
 var jump_times = 0
@@ -38,9 +38,15 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("a", "d")
 	if direction:
 		velocity.x = direction * SPEED
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	elif velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	
 	move_and_slide()
 
 

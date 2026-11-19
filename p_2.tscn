@@ -15,14 +15,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n266t"]
-size = Vector2(80, 80)
+size = Vector2(16, 16)
 
 [node name="P2" type="CharacterBody2D" unique_id=1594469872]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_5w6ov")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=36387258]
-scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ufewp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806365830]

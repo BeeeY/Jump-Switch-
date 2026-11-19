@@ -4,52 +4,173 @@
 [ext_resource type="PackedScene" uid="uid://dhyhgm4dxee2p" path="res://p_1.tscn" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://ctmq1ktmq0ubx" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://066a1gj8tk3g" path="res://p_2.tscn" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://v32olqy4y7i1" path="res://icon.svg" id="3_lquwl"]
-[ext_resource type="Texture2D" uid="uid://dppm2xh06dmwb" path="res://assets/Jump Switch Sprites3.png" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://noseem8lnb34" path="res://assets/tiles1.png" id="5_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bxje7byjttckm" path="res://assets/tiles2.png" id="6_kek77"]
+[ext_resource type="Texture2D" uid="uid://wdooa0rpixbf" path="res://assets/tiles3.png" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://745xexk53sye" path="res://assets/tiles4.png" id="8_efxa6"]
+[ext_resource type="Texture2D" uid="uid://3tpa4hl0dgea" path="res://assets/flag1.png" id="9_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bqysqkfu22s36" path="res://assets/flag2.png" id="10_efxa6"]
+[ext_resource type="Texture2D" uid="uid://ch1e3mqt4d87p" path="res://assets/wasd1.png" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://eidbuyuqtyk0" path="res://assets/wasd2.png" id="12_ycdy4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
-size = Vector2(500, 20)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg77c"]
+texture = ExtResource("5_5vw27")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
-texture = ExtResource("6_7mycd")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
+texture = ExtResource("6_kek77")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w48qg"]
+texture = ExtResource("7_4c57u")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vivmo"]
+texture = ExtResource("8_efxa6")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_lquwl"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_272bh")
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/1 = SubResource("TileSetAtlasSource_dg77c")
+sources/2 = SubResource("TileSetAtlasSource_ycdy4")
+sources/3 = SubResource("TileSetAtlasSource_w48qg")
+sources/4 = SubResource("TileSetAtlasSource_vivmo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(384, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(384, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(10, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glgfw"]
+size = Vector2(10, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufewp"]
+size = Vector2(16, 22)
 
 [node name="Main" type="Node2D" unique_id=1339862464]
 script = ExtResource("1_lquwl")
 
 [node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
+
+[node name="Controls" type="Sprite2D" parent="." unique_id=248085574]
+position = Vector2(335, 118)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_dg77c")
+
+[node name="Controls2" type="Sprite2D" parent="." unique_id=1884163629]
+position = Vector2(50.000004, 118.00001)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_ycdy4")
+
+[node name="P1" parent="." unique_id=797948295 groups=["red"] instance=ExtResource("1_h2yge")]
+position = Vector2(63, 160)
+
+[node name="P2" parent="." unique_id=1594469872 groups=["blue"] instance=ExtResource("2_1bvp3")]
+position = Vector2(323, 160)
+
+[node name="Level1" type="TileMapLayer" parent="." unique_id=1623601881]
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAACAAcAAwAAAAAAAAAEAAYAAwAAAAAAAAAFAAYAAwAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAALAAYABAAAAAAAAAAKAAYABAAAAAAAAAAHAAUAAwAAAAAAAAAIAAUABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level2" type="TileMapLayer" parent="." unique_id=1143906434]
 visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAAAAgABAAAAAAAAAABAAgABAAAAAAAAAAEAAgABAAAAAAAAAAFAAgABAAAAAAAAAAIAAgABAAAAAAAAAAJAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
 
-[node name="P1" parent="." unique_id=797948295 instance=ExtResource("1_h2yge")]
-position = Vector2(86, 526)
+[node name="Spawn1" type="Marker2D" parent="." unique_id=77481038]
+position = Vector2(51, 156)
 
-[node name="P2" parent="." unique_id=1594469872 instance=ExtResource("2_1bvp3")]
-position = Vector2(418, 543)
+[node name="Spawn2" type="Marker2D" parent="." unique_id=275971787]
+position = Vector2(335, 160)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1761590388]
-position = Vector2(256, 621)
+[node name="Spawn3" type="Marker2D" parent="." unique_id=1150110053]
+position = Vector2(46, 36)
+
+[node name="Spawn4" type="Marker2D" parent="." unique_id=1397919431]
+position = Vector2(326, 42)
+
+[node name="Spawn5" type="Marker2D" parent="." unique_id=299574377]
+position = Vector2(197, 45)
+
+[node name="Spawn6" type="Marker2D" parent="." unique_id=672258438]
+position = Vector2(193, 162)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=325556657]
+position = Vector2(188, 220)
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1408340082]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451472099]
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=976896840]
+position = Vector2(192, -5)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1812897943]
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=208832662]
+position = Vector2(-7, 106)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2031889065]
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1551305633]
+position = Vector2(389, 107)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=50392554]
 shape = SubResource("RectangleShape2D_glgfw")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1540060670]
-scale = Vector2(3.8, 0.1)
-texture = ExtResource("3_lquwl")
+[node name="RedFlag" type="Area2D" parent="." unique_id=1470441046]
+position = Vector2(335, 158)
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=77481038]
+[node name="Sprite2D" type="Sprite2D" parent="RedFlag" unique_id=2043457747]
+texture = ExtResource("9_4c57u")
+offset = Vector2(0, -1)
 
-[node name="Level1" type="TileMapLayer" parent="." unique_id=1143906434]
-tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_lquwl")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedFlag" unique_id=128194604]
+shape = SubResource("RectangleShape2D_ufewp")
+
+[node name="BlueFlag" type="Area2D" parent="." unique_id=1863555438]
+position = Vector2(49, 157)
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BlueFlag" unique_id=1585251638]
+texture = ExtResource("10_efxa6")
+offset = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueFlag" unique_id=532129318]
+shape = SubResource("RectangleShape2D_ufewp")
 
 [connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]
 [connection signal="jumped" from="P1" to="hud" method="_on_p_1_jumped"]
 [connection signal="jumped" from="P1" to="P2" method="_on_p_1_jumped"]
 [connection signal="jumped" from="P2" to="hud" method="_on_p_2_jumped"]
 [connection signal="jumped" from="P2" to="P1" method="_on_p_2_jumped"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="RedFlag" to="." method="_on_red_flag_body_entered"]
+[connection signal="body_exited" from="RedFlag" to="." method="_on_red_flag_body_exited"]
+[connection signal="body_entered" from="BlueFlag" to="." method="_on_blue_flag_body_entered"]
+[connection signal="body_exited" from="BlueFlag" to="." method="_on_blue_flag_body_exited"]

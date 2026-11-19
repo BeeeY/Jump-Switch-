@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dppm2xh06dmwb"
-path="res://.godot/imported/Jump Switch Sprites3.png-ba3e50232218ab129d9b0f250049d198.ctex"
+uid="uid://745xexk53sye"
+path="res://.godot/imported/tiles4.png-dee21bda74b447bf35dd4545bed8d0b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jump Switch Sprites3.png"
-dest_files=["res://.godot/imported/Jump Switch Sprites3.png-ba3e50232218ab129d9b0f250049d198.ctex"]
+source_file="res://assets/tiles4.png"
+dest_files=["res://.godot/imported/tiles4.png-dee21bda74b447bf35dd4545bed8d0b6.ctex"]
 
 [params]
 

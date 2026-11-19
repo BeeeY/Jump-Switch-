@@ -15,13 +15,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5af"]
-size = Vector2(80, 80)
+size = Vector2(16, 16)
 
 [node name="P1" type="CharacterBody2D" unique_id=797948295]
 script = ExtResource("1_jjlup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1465693378]
-scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_glgfw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525889128]
