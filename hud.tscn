@@ -34,40 +34,51 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
 
 [node name="Title" type="Label" parent="." unique_id=1210574253]
-offset_left = 19.0
-offset_top = -5.0
-offset_right = 201.0
-offset_bottom = 103.0
+offset_left = 39.0
+offset_top = 11.0
+offset_right = 221.0
+offset_bottom = 119.0
 theme = ExtResource("2_64ctp")
 theme_override_colors/font_color = Color(0.99878925, 0.58783215, 0.5597773, 1)
 text = "Jump"
 
 [node name="Title2" type="Label" parent="." unique_id=1544943132]
-offset_left = 117.0
+offset_left = 114.0
 offset_top = 67.0
-offset_right = 369.0
+offset_right = 366.0
 offset_bottom = 175.0
 theme = ExtResource("2_64ctp")
 theme_override_colors/font_color = Color(0.3080571, 0.73726946, 0.6716846, 1)
 text = "Switch!"
 
 [node name="Level" type="Label" parent="." unique_id=1643740779]
+visible = false
 offset_left = 143.0
 offset_top = 8.0
 offset_right = 240.0
 offset_bottom = 42.0
 theme = ExtResource("2_64ctp")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Level 1"
 horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="." unique_id=63127950]
-offset_left = 156.0
-offset_top = 162.0
-offset_right = 220.0
-offset_bottom = 204.0
+offset_left = 163.0
+offset_top = 152.0
+offset_right = 227.0
+offset_bottom = 194.0
 theme = ExtResource("2_64ctp")
 theme_override_font_sizes/font_size = 30
 text = "Start"
+
+[node name="Thanks" type="Label" parent="." unique_id=1472361511]
+visible = false
+offset_left = 27.0
+offset_top = 87.0
+offset_right = 354.0
+offset_bottom = 142.0
+theme = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 50
+text = "Thanks for Playing!"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

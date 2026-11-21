@@ -3,12 +3,11 @@ extends CanvasLayer
 signal start_game
 
 @onready var style: StyleBoxFlat = $Border.get_theme_stylebox("panel")
+var level = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Border.hide()
-	$Level.hide()
-
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -30,3 +29,14 @@ func _on_start_pressed() -> void:
 	$Border.show()
 	$Level.show()
 	start_game.emit()
+
+func game_end():
+	$background.show()
+	$Title.text = "Thanks for "
+	$Title.show()
+	$Title2.text = "Playing!"
+	$Title2.show()
+
+func _on_main_level_finished() -> void:
+	level += 1
+	$Level.text = "Level " + str(level)

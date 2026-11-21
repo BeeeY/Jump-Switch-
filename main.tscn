@@ -71,10 +71,10 @@ position = Vector2(50.000004, 118.00001)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_ycdy4")
 
-[node name="P1" parent="." unique_id=797948295 groups=["red"] instance=ExtResource("1_h2yge")]
+[node name="P1" parent="." unique_id=797948295 groups=["player", "red"] instance=ExtResource("1_h2yge")]
 position = Vector2(63, 160)
 
-[node name="P2" parent="." unique_id=1594469872 groups=["blue"] instance=ExtResource("2_1bvp3")]
+[node name="P2" parent="." unique_id=1594469872 groups=["blue", "player"] instance=ExtResource("2_1bvp3")]
 position = Vector2(323, 160)
 
 [node name="Level1" type="TileMapLayer" parent="." unique_id=1623601881]
@@ -86,6 +86,54 @@ tile_set = SubResource("TileSet_lquwl")
 visible = false
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAAAAgABAAAAAAAAAABAAgABAAAAAAAAAAEAAgABAAAAAAAAAAFAAgABAAAAAAAAAAIAAgABAAAAAAAAAAJAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level3" type="TileMapLayer" parent="." unique_id=518528144]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAAMABAAAAAAAAAANAAMABAAAAAAAAAAFAAcAAwAAAAAAAAALAAcAAwAAAAAAAAACAAcAAwAAAAAAAAABAAcAAwAAAAAAAAADAAcAAwAAAAAAAAAHAAcAAwAAAAAAAAAJAAcAAwAAAAAAAAANAAcAAwAAAAAAAAAOAAcAAwAAAAAAAAAOAAMABAAAAAAAAAAMAAMABAAAAAAAAAAKAAMABAAAAAAAAAAIAAMABAAAAAAAAAAGAAMABAAAAAAAAAAEAAMABAAAAAAAAAACAAMABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level4" type="TileMapLayer" parent="." unique_id=1543848581]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAALAAcAAwAAAAAAAAANAAYAAwAAAAAAAAACAAYABAAAAAAAAAAEAAcABAAAAAAAAAAIAAcAAwAAAAAAAAAHAAcABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level5" type="TileMapLayer" parent="." unique_id=636048260]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAADAAYAAwAAAAAAAAAFAAUAAwAAAAAAAAAHAAQAAwAAAAAAAAAIAAQABAAAAAAAAAAKAAUABAAAAAAAAAAMAAYABAAAAAAAAAAOAAcABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level6" type="TileMapLayer" parent="." unique_id=1825599797]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAADABAAQAAgAAAAAAADACAAQAAgAAAAAAADADAAQAAgAAAAAAADAEAAQAAgAAAAAAADAFAAQAAgAAAAAAADAGAAQAAgAAAAAAADAHAAQAAgAAAAAAADAIAAQAAgAAAAAAADAJAAQAAgAAAAAAADAKAAQAAgAAAAAAADALAAQAAgAAAAAAADAMAAQAAgAAAAAAADANAAQAAgAAAAAAADAOAAQAAgAAAAAAADAPAAQAAgAAAAAAADAOAAcAAwAAAAAAAAAMAAcAAwAAAAAAAAANAAcAAwAAAAAAAAAJAAgAAwAAAAAAAAAGAAcAAwAAAAAAAAADAAgAAwAAAAAAAAACAAgAAwAAAAAAAAABAAgAAwAAAAAAAAALAAEABAAAAAAAAAAMAAEABAAAAAAAAAANAAEABAAAAAAAAAAIAAIABAAAAAAAAAAHAAIABAAAAAAAAAAEAAMABAAAAAAAAAADAAMABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level7" type="TileMapLayer" parent="." unique_id=1889745357]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAAMAAUABAAAAAAAAAACAAcAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAALAAMABAAAAAAAAAAKAAMABAAAAAAAAAAJAAMABAAAAAAAAAAHAAMAAwAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level8" type="TileMapLayer" parent="." unique_id=520388406]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAMAAwAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAIAAMAAwAAAAAAAAANAAMAAwAAAAAAAAAOAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAACAAcABAAAAAAAAAABAAcABAAAAAAAAAAAAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAPAAcABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level9" type="TileMapLayer" parent="." unique_id=956209804]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAHAAgAAwAAAAAAAAAHAAcAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAHAAQAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAIAAwAAAAAAAAAIAAIABAAAAAAAAAAIAAMABAAAAAAAAAAIAAQABAAAAAAAAAAIAAUABAAAAAAAAAAIAAYABAAAAAAAAAAIAAcABAAAAAAAAAAIAAgABAAAAAAAAAAAAAgAAwAAAAAAAAABAAYAAwAAAAAAAAAAAAMAAwAAAAAAAAADAAIAAwAAAAAAAAAPAAgABAAAAAAAAAAOAAYABAAAAAAAAAAPAAMABAAAAAAAAAAMAAIABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lquwl")
+
+[node name="Level10" type="TileMapLayer" parent="." unique_id=463160648]
+visible = false
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAgAAwAAAAAAAAABAAgAAwAAAAAAAAACAAgAAwAAAAAAAAADAAgAAwAAAAAAAAAEAAgAAwAAAAAAAAAFAAgAAwAAAAAAAAAKAAgABAAAAAAAAAALAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAAJAAgABAAAAAAAAAAIAAgABAAAAAAAAAAHAAgAAwAAAAAAAAAGAAgAAwAAAAAAAAAFAAYABAAAAAAAAAAEAAQABAAAAAAAAAADAAIABAAAAAAAAAACAAIABAAAAAAAAAABAAIABAAAAAAAAAAAAAIABAAAAAAAAAAKAAYAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAIAAwAAAAAAAAANAAIAAwAAAAAAAAAOAAIAAwAAAAAAAAAPAAIAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Spawn1" type="Marker2D" parent="." unique_id=77481038]
@@ -107,7 +155,9 @@ position = Vector2(197, 45)
 position = Vector2(193, 162)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=325556657]
-position = Vector2(188, 220)
+position = Vector2(192, 222)
+collision_layer = 3
+collision_mask = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -116,6 +166,8 @@ shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=976896840]
 position = Vector2(192, -5)
+collision_layer = 3
+collision_mask = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -123,7 +175,9 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_7mycd")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=208832662]
-position = Vector2(-7, 106)
+position = Vector2(-5, 109)
+collision_layer = 3
+collision_mask = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -131,7 +185,9 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_272bh")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1551305633]
-position = Vector2(389, 107)
+position = Vector2(389, 109)
+collision_layer = 3
+collision_mask = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -164,6 +220,8 @@ offset = Vector2(0, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueFlag" unique_id=532129318]
 shape = SubResource("RectangleShape2D_ufewp")
 
+[connection signal="level_finished" from="." to="." method="_on_level_finished"]
+[connection signal="level_finished" from="." to="hud" method="_on_main_level_finished"]
 [connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]
 [connection signal="jumped" from="P1" to="hud" method="_on_p_1_jumped"]
 [connection signal="jumped" from="P1" to="P2" method="_on_p_1_jumped"]

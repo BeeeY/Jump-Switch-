@@ -1,24 +1,38 @@
 extends Node2D
 
 signal level_finished
+signal game_finish
 
+@onready var p1_spawn = $Spawn1.position
+@onready var p2_spawn = $Spawn2.position
 var p1_on_flag = false
 var p2_on_flag = false
+var p1_and_p2_were_on_flags = true
 var level = 1
+@onready var levels = [
+$Level1,
+$Level2,
+$Level3,
+$Level4,
+$Level5,
+$Level6,
+$Level7,
+$Level8,
+$Level9,
+$Level10]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Level2.collision_enabled = false
-
-
+	for level in levels:
+		level.collision_enabled = false
+	$Level1.collision_enabled = true
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if p1_on_flag && p2_on_flag:
-		print("osehfieljflj")
-		level += 1
-		restart()
-		level_finished.emit()
+	if level > 1:
+		$Controls.hide()
+		$Controls2.hide()
 
 func _on_hud_start_game() -> void:
 	$P1.spawn($Spawn1.position)
@@ -33,10 +47,98 @@ func next_level(current_level,next_level):
 
 
 func restart():
+	
+	$P1.jump_turn = null
+	$P2.jump_turn = null
+	$hud.style.border_color = Color.GRAY
+	
+	if p1_on_flag == true && p2_on_flag == true:
+		p1_and_p2_were_on_flags = true
+		
 	p1_on_flag = false
 	p2_on_flag = false
 	
+	if level == 1:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level1,$Level2)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 2:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level2,$Level3)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 3:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level3,$Level4)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 4:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level4,$Level5)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 5:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level5,$Level6)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 6:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level6,$Level7)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 7:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level7,$Level8)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 8:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level8,$Level9)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 9:
+		if p1_and_p2_were_on_flags == true:
+			next_level($Level9,$Level10)
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	elif level == 10:
+		if p1_and_p2_were_on_flags == true:
+			game_finish.emit()
+		else:
+			$P1.spawn(p1_spawn)
+			$P2.spawn(p2_spawn)
+	p1_and_p2_were_on_flags = false
 	
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		restart()
@@ -44,10 +146,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_red_flag_body_entered(body: Node2D) -> void:
 	if body.is_in_group("red"):
 		p1_on_flag = true
+		if p2_on_flag == true:
+			level_finished.emit()
 
 func _on_blue_flag_body_entered(body: Node2D) -> void:
 	if body.is_in_group("blue"):
 		p2_on_flag = true
+		if p1_on_flag == true:
+			level_finished.emit()
 
 func _on_red_flag_body_exited(body: Node2D) -> void:
 	if body.is_in_group("red"):
@@ -56,3 +162,7 @@ func _on_red_flag_body_exited(body: Node2D) -> void:
 func _on_blue_flag_body_exited(body: Node2D) -> void:
 	if body.is_in_group("blue"):
 		p2_on_flag = false
+
+func _on_level_finished() -> void:
+	level += 1
+	restart()
