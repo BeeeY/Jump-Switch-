@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal jumped
 
 const SPEED = 150
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -250.0
 
 var jump_turn = null
 var jump_times = 0

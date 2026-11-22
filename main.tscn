@@ -60,6 +60,7 @@ size = Vector2(16, 22)
 script = ExtResource("1_lquwl")
 
 [node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
+visible = false
 
 [node name="Controls" type="Sprite2D" parent="." unique_id=248085574]
 position = Vector2(335, 118)
@@ -72,10 +73,10 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_ycdy4")
 
 [node name="P1" parent="." unique_id=797948295 groups=["player", "red"] instance=ExtResource("1_h2yge")]
-position = Vector2(63, 160)
+position = Vector2(48, 157)
 
 [node name="P2" parent="." unique_id=1594469872 groups=["blue", "player"] instance=ExtResource("2_1bvp3")]
-position = Vector2(323, 160)
+position = Vector2(336, 157)
 
 [node name="Level1" type="TileMapLayer" parent="." unique_id=1623601881]
 scale = Vector2(1.5, 1.5)
@@ -85,7 +86,7 @@ tile_set = SubResource("TileSet_lquwl")
 [node name="Level2" type="TileMapLayer" parent="." unique_id=1143906434]
 visible = false
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAAAAgABAAAAAAAAAABAAgABAAAAAAAAAAEAAgABAAAAAAAAAAFAAgABAAAAAAAAAAIAAgABAAAAAAAAAAJAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAgAAAAAAAAAAAAcABAAAAAAAAAABAAMAAgAAAAAAAAABAAcABAAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAcABAAAAAAAAAAFAAMAAgAAAAAAAAAFAAcABAAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAcABAAAAAAAAAAJAAMAAgAAAAAAAAAJAAcABAAAAAAAAAAKAAMAAgAAAAAAAAALAAMAAgAAAAAAAAAMAAMAAgAAAAAAAAAMAAcABAAAAAAAAAANAAMAAgAAAAAAAAANAAcABAAAAAAAAAAOAAMAAgAAAAAAAAAOAAcABAAAAAAAAAAPAAMAAgAAAAAAAAAPAAcABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Level3" type="TileMapLayer" parent="." unique_id=518528144]
@@ -137,22 +138,20 @@ tile_map_data = PackedByteArray("AAAAAAgAAwAAAAAAAAABAAgAAwAAAAAAAAACAAgAAwAAAAA
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Spawn1" type="Marker2D" parent="." unique_id=77481038]
-position = Vector2(51, 156)
+position = Vector2(48, 157)
+metadata/_edit_lock_ = true
 
 [node name="Spawn2" type="Marker2D" parent="." unique_id=275971787]
-position = Vector2(335, 160)
+position = Vector2(336, 157)
+metadata/_edit_lock_ = true
 
 [node name="Spawn3" type="Marker2D" parent="." unique_id=1150110053]
-position = Vector2(46, 36)
+position = Vector2(48, 61)
+metadata/_edit_lock_ = true
 
 [node name="Spawn4" type="Marker2D" parent="." unique_id=1397919431]
-position = Vector2(326, 42)
-
-[node name="Spawn5" type="Marker2D" parent="." unique_id=299574377]
-position = Vector2(197, 45)
-
-[node name="Spawn6" type="Marker2D" parent="." unique_id=672258438]
-position = Vector2(193, 162)
+position = Vector2(336, 61)
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=325556657]
 position = Vector2(192, 222)
@@ -195,7 +194,7 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_glgfw")
 
 [node name="RedFlag" type="Area2D" parent="." unique_id=1470441046]
-position = Vector2(335, 158)
+position = Vector2(336, 157)
 collision_layer = 3
 collision_mask = 3
 metadata/_edit_group_ = true
@@ -208,7 +207,7 @@ offset = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ufewp")
 
 [node name="BlueFlag" type="Area2D" parent="." unique_id=1863555438]
-position = Vector2(49, 157)
+position = Vector2(48, 157)
 collision_layer = 3
 collision_mask = 3
 metadata/_edit_group_ = true
