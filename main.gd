@@ -85,64 +85,58 @@ func restart():
 	elif level == 3:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level3,$Level4)
-			move_flags_and_players(s1,s4,s2,s3) #wrong
+			move_flags_and_players(s1,s3,s2,s4)
 		else:
 			move_flags_and_players(s1,s4,s2,s3)
 			
 	elif level == 4:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level4,$Level5)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s1,s2,s3,s4)
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s1,s3,s2,s4)
+			
 	elif level == 5:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level5,$Level6)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s3,s2)
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s1,s2,s3,s4)
+			
 	elif level == 6:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level6,$Level7)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3) #wrobng
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s3,s2)
+			
 	elif level == 7:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level7,$Level8)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
+			
 	elif level == 8:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level8,$Level9)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
+			
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
+			
 	elif level == 9:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level9,$Level10)
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
+			
 	elif level == 10:
 		if p1_and_p2_were_on_flags == true:
 			game_finish.emit()
 		else:
-			$P1.spawn(p1_spawn)
-			$P2.spawn(p2_spawn)
+			move_flags_and_players(s4,s1,s2,s3)
 	p1_and_p2_were_on_flags = false
 	
 
