@@ -17,9 +17,7 @@ $Level4,
 $Level5,
 $Level6,
 $Level7,
-$Level8,
-$Level9,
-$Level10]
+$Level8]
 @onready var s1 = $Spawn1.position
 @onready var s2 = $Spawn2.position
 @onready var s3 = $Spawn3.position
@@ -36,6 +34,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_hud_start_game() -> void:
+	$AudioStreamPlayer.play()
 	$P1.spawn($Spawn1.position)
 	$P2.spawn($Spawn2.position)
 	
@@ -106,37 +105,23 @@ func restart():
 	elif level == 6:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level6,$Level7)
-			move_flags_and_players(s4,s1,s2,s3) #wrobng
+			move_flags_and_players(s2,s1,s4,s3)
 		else:
 			move_flags_and_players(s4,s1,s3,s2)
 			
 	elif level == 7:
 		if p1_and_p2_were_on_flags == true:
 			next_level($Level7,$Level8)
-			move_flags_and_players(s4,s1,s2,s3)
+			move_flags_and_players(s3,s4,s1,s2)
 		else:
-			move_flags_and_players(s4,s1,s2,s3)
+			move_flags_and_players(s2,s1,s4,s3)
 			
 	elif level == 8:
 		if p1_and_p2_were_on_flags == true:
-			next_level($Level8,$Level9)
-			move_flags_and_players(s4,s1,s2,s3)
-			
-		else:
-			move_flags_and_players(s4,s1,s2,s3)
-			
-	elif level == 9:
-		if p1_and_p2_were_on_flags == true:
-			next_level($Level9,$Level10)
-			move_flags_and_players(s4,s1,s2,s3)
-		else:
-			move_flags_and_players(s4,s1,s2,s3)
-			
-	elif level == 10:
-		if p1_and_p2_were_on_flags == true:
 			game_finish.emit()
 		else:
-			move_flags_and_players(s4,s1,s2,s3)
+			move_flags_and_players(s3,s4,s1,s2)
+			
 	p1_and_p2_were_on_flags = false
 	
 

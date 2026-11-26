@@ -25,9 +25,10 @@ script = ExtResource("1_37p78")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2135365153]
 offset_right = 384.0
-offset_bottom = 217.0
+offset_bottom = 216.0
 
 [node name="Border" type="Panel" parent="." unique_id=1259054981]
+visible = false
 offset_right = 384.0
 offset_bottom = 216.0
 mouse_filter = 2
@@ -36,7 +37,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
 [node name="Title" type="Label" parent="." unique_id=1210574253]
 offset_left = 39.0
 offset_top = 11.0
-offset_right = 221.0
+offset_right = 326.0
 offset_bottom = 119.0
 theme = ExtResource("2_64ctp")
 theme_override_colors/font_color = Color(0.99878925, 0.58783215, 0.5597773, 1)
@@ -80,5 +81,27 @@ offset_bottom = 142.0
 theme = ExtResource("2_64ctp")
 theme_override_font_sizes/font_size = 50
 text = "Thanks for Playing!"
+
+[node name="YouWin" type="Label" parent="." unique_id=465646404]
+visible = false
+offset_left = 124.0
+offset_top = 76.0
+offset_right = 269.0
+offset_bottom = 131.0
+theme = ExtResource("2_64ctp")
+theme_override_colors/font_color = Color(1, 0.5882353, 0.56078434, 1)
+theme_override_font_sizes/font_size = 50
+text = "You Win!"
+
+[node name="YouWin2" type="Label" parent="." unique_id=1515263172]
+visible = false
+offset_left = 33.0
+offset_top = 113.0
+offset_right = 360.0
+offset_bottom = 168.0
+theme = ExtResource("2_64ctp")
+theme_override_colors/font_color = Color(0.30980393, 0.7372549, 0.67058825, 1)
+theme_override_font_sizes/font_size = 50
+text = "Thanks for playing!"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

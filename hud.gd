@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-
 func _on_p_1_jumped() -> void:
 	style.border_color = Color.CADET_BLUE
 
@@ -31,12 +30,15 @@ func _on_start_pressed() -> void:
 	start_game.emit()
 
 func game_end():
-	$background.show()
-	$Title.text = "Thanks for "
-	$Title.show()
-	$Title2.text = "Playing!"
-	$Title2.show()
+	$Background.show()
+	$YouWin.show()
+	$YouWin2.show()
+	$Border.hide()
 
 func _on_main_level_finished() -> void:
 	level += 1
 	$Level.text = "Level " + str(level)
+
+
+func _on_main_game_finish() -> void:
+	game_end()

@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ch1e3mqt4d87p" path="res://assets/wasd1.png" id="11_dg77c"]
 [ext_resource type="Theme" uid="uid://26cr5x5m37gb" path="res://new_theme.tres" id="11_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://eidbuyuqtyk0" path="res://assets/wasd2.png" id="12_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bfihy42uvojn7" path="res://assets/jump start trimmed audio again.wav" id="14_w48qg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg77c"]
 texture = ExtResource("5_5vw27")
@@ -60,8 +61,12 @@ size = Vector2(16, 22)
 [node name="Main" type="Node2D" unique_id=1339862464]
 script = ExtResource("1_lquwl")
 
+[node name="Background" type="ColorRect" parent="." unique_id=1008085561]
+offset_right = 384.0
+offset_bottom = 216.0
+color = Color(0.5211409, 0.5211405, 0.52114046, 1)
+
 [node name="hud" parent="." unique_id=810032543 instance=ExtResource("1_1bvp3")]
-visible = false
 
 [node name="Controls" type="Sprite2D" parent="." unique_id=248085574]
 position = Vector2(335, 118)
@@ -80,7 +85,6 @@ position = Vector2(48, 157)
 position = Vector2(336, 157)
 
 [node name="Level1" type="TileMapLayer" parent="." unique_id=1623601881]
-visible = false
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAACAAcAAwAAAAAAAAAEAAYAAwAAAAAAAAAFAAYAAwAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAALAAYABAAAAAAAAAAKAAYABAAAAAAAAAAHAAUAAwAAAAAAAAAIAAUABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
@@ -110,10 +114,10 @@ tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAACAAcAAwAAAAAAAAAOAAcABAAAAAA
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Label" type="Label" parent="Level5" unique_id=1450825514]
-offset_left = 81.333336
-offset_top = 104.66667
-offset_right = 188.33334
-offset_bottom = 127.66667
+offset_left = 74.0
+offset_top = 107.33333
+offset_right = 181.00002
+offset_bottom = 130.33333
 theme = ExtResource("11_ycdy4")
 theme_override_font_sizes/font_size = 10
 text = "Jump in the air to double jump!"
@@ -121,31 +125,19 @@ text = "Jump in the air to double jump!"
 [node name="Level6" type="TileMapLayer" parent="." unique_id=636048260]
 visible = false
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAAcABAAAAAAAAAACAAcABAAAAAAAAAAGAAcABAAAAAAAAAAKAAcABAAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAMAAwAAAAAAAAANAAMAAwAAAAAAAAAJAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAACAAMAAwAAAAAAAAABAAMAAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAcABAAAAAAAAAACAAcABAAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAMAAwAAAAAAAAANAAMAAwAAAAAAAAACAAMAAwAAAAAAAAABAAMAAwAAAAAAAAAIAAcABAAAAAAAAAAHAAcABAAAAAAAAAAHAAMAAwAAAAAAAAAIAAMAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
-[node name="Level7" type="TileMapLayer" parent="." unique_id=1889745357]
+[node name="Level7" type="TileMapLayer" parent="." unique_id=520388406]
 visible = false
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAABAAcAAwAAAAAAAAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAAMAAUABAAAAAAAAAACAAcAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAALAAMABAAAAAAAAAAKAAMABAAAAAAAAAAJAAMABAAAAAAAAAAHAAMAAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAANAAcAAwAAAAAAAAAOAAcAAwAAAAAAAAACAAcABAAAAAAAAAABAAcABAAAAAAAAAAOAAMAAwAAAAAAAAANAAMAAwAAAAAAAAABAAMABAAAAAAAAAACAAMABAAAAAAAAAAIAAUAAwAAAAAAAAAHAAUABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
-[node name="Level8" type="TileMapLayer" parent="." unique_id=520388406]
+[node name="Level8" type="TileMapLayer" parent="." unique_id=1889745357]
 visible = false
 scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAAAAMAAwAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAIAAMAAwAAAAAAAAANAAMAAwAAAAAAAAAOAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAACAAcABAAAAAAAAAABAAcABAAAAAAAAAAAAAcABAAAAAAAAAAHAAcABAAAAAAAAAAIAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAPAAcABAAAAAAAAAA=")
-tile_set = SubResource("TileSet_lquwl")
-
-[node name="Level9" type="TileMapLayer" parent="." unique_id=463160648]
-visible = false
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAAAAgAAwAAAAAAAAABAAgAAwAAAAAAAAACAAgAAwAAAAAAAAADAAgAAwAAAAAAAAAEAAgAAwAAAAAAAAAFAAgAAwAAAAAAAAAKAAgABAAAAAAAAAALAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAAJAAgABAAAAAAAAAAIAAgABAAAAAAAAAAHAAgAAwAAAAAAAAAGAAgAAwAAAAAAAAAFAAYABAAAAAAAAAAEAAQABAAAAAAAAAADAAIABAAAAAAAAAACAAIABAAAAAAAAAABAAIABAAAAAAAAAAAAAIABAAAAAAAAAAKAAYAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAIAAwAAAAAAAAANAAIAAwAAAAAAAAAOAAIAAwAAAAAAAAAPAAIAAwAAAAAAAAA=")
-tile_set = SubResource("TileSet_lquwl")
-
-[node name="Level10" type="TileMapLayer" parent="." unique_id=956209804]
-visible = false
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAAOAAcABAAAAAAAAAANAAcABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAAFAAcABAAAAAAAAAAIAAcABAAAAAAAAAAPAAUABAAAAAAAAAAIAAIAAwAAAAAAAAAHAAIAAwAAAAAAAAAHAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAADAAMAAwAAAAAAAAACAAMAAwAAAAAAAAACAAQAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAQAAwAAAAAAAAAJAAMAAwAAAAAAAAAKAAMAAwAAAAAAAAAKAAIAAwAAAAAAAAALAAQAAwAAAAAAAAALAAUAAwAAAAAAAAAMAAUAAwAAAAAAAAAMAAYAAwAAAAAAAAANAAQAAwAAAAAAAAANAAMAAwAAAAAAAAAOAAIAAwAAAAAAAAAPAAEAAwAAAAAAAAAPAAAAAwAAAAAAAAAOAAEAAwAAAAAAAAANAAIAAwAAAAAAAAAMAAMAAwAAAAAAAAAKAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAGAAcAAwAAAAAAAAAFAAYAAwAAAAAAAAAEAAYAAwAAAAAAAAADAAYAAwAAAAAAAAACAAUAAwAAAAAAAAABAAUAAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAANAAMABAAAAAAAAAAOAAMABAAAAAAAAAAPAAMABAAAAAAAAAAMAAMABAAAAAAAAAALAAMABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAEAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAAAAMAAwAAAAAAAAACAAcAAwAAAAAAAAABAAcAAwAAAAAAAAAFAAMAAwAAAAAAAAAKAAMABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Spawn1" type="Marker2D" parent="." unique_id=77481038]
@@ -230,6 +222,10 @@ offset = Vector2(0, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueFlag" unique_id=532129318]
 shape = SubResource("RectangleShape2D_ufewp")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=135103269]
+stream = ExtResource("14_w48qg")
+
+[connection signal="game_finish" from="." to="hud" method="_on_main_game_finish"]
 [connection signal="level_finished" from="." to="." method="_on_level_finished"]
 [connection signal="level_finished" from="." to="hud" method="_on_main_level_finished"]
 [connection signal="start_game" from="hud" to="." method="_on_hud_start_game"]
